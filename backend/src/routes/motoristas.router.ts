@@ -3,8 +3,7 @@ import { obtenerMotorista, obtenerMotoristas, crearMotorista } from '../controll
 
 const router = express.Router();
 
-router.get('/', obtenerMotoristas);
-router.get('/:id', obtenerMotorista);
+router.get('/', obtenerMotorista);
 router.post('/', crearMotorista);
 
 export default router;

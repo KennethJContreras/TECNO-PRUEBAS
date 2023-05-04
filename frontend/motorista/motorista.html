@@ -29,15 +29,16 @@
             </div>
 
             <main class="container-formulario">
-                <form action="">
+                <form action="" id="form-login">
                     <section>
                         <i class="fa-solid fa-user"></i>
-                        <input id="user" type="text" placeholder="usuario">
+                        <input id="user" type="text" placeholder="email">
                     </section>
                     <section>
                         <i class="fa-solid fa-lock"></i>
                         <input id="contra" type="password" placeholder="contraseña">
                     </section>
+                    <span id="login-error" class="msg-error"></span>
                 </form>
             </main>
 
@@ -62,26 +63,29 @@
                 Ingresa tus datos
             </section>
             <main>
-                <div class="contenedor-input">
-                    <p>Nombre completo</p>
-                    <input id="inp-nombre" class="input-bonito" type="text" placeholder="Usuario">
-                </div>
-                <div class="contenedor-input">
-                    <p>Email</p>
-                    <input id="inp-email" class="input-bonito" type="email" placeholder="keneth00@gmail.com">
-                </div>
-                <div class="contenedor-input">
-                    <p>Teléfono</p>
-                    <input id="inp-telefono" class="input-bonito" type="text" placeholder="0000-0000">
-                </div>
-                <div class="contenedor-input">
-                    <p>Contraseña</p>
-                    <input id="inp-contraseña" class="input-bonito" type="password">
-                </div>
-                <div class="contenedor-input">
-                    <p>Confirme su contraseña</p>
-                    <input id="inp-contraseña2" class="input-bonito" type="password">
-                </div>
+                <form action="" id="form-registro">
+                    <div class="contenedor-input">
+                        <p>Nombre completo</p>
+                        <input id="inp-nombre" class="input-bonito" type="text" placeholder="Usuario">
+                    </div>
+                    <div class="contenedor-input">
+                        <p>Email</p>
+                        <input id="inp-email" class="input-bonito" type="email" placeholder="keneth00@gmail.com">
+                    </div>
+                    <div class="contenedor-input">
+                        <p>Teléfono</p>
+                        <input id="inp-telefono" class="input-bonito" type="text" placeholder="0000-0000">
+                    </div>
+                    <div class="contenedor-input">
+                        <p>Contraseña</p>
+                        <input id="inp-contraseña" class="input-bonito" type="password">
+                    </div>
+                    <div class="contenedor-input">
+                        <p>Confirme su contraseña</p>
+                        <input id="inp-contraseña2" class="input-bonito" type="password">
+                    </div>
+                    <span id="registro-error" class="msg-error"></span>
+                </form>
             </main>
             <footer>
                 <button id="btn-listo" onclick="validacionInputs()">LISTO</button>

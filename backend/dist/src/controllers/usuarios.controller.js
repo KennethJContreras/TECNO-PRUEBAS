@@ -3,10 +3,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.crearUsuario = exports.obtenerUsuarios = exports.obtenerUsuario = void 0;
 const usuario_schema_1 = require("../models/usuario.schema");
 const obtenerUsuario = (req, res) => {
-    usuario_schema_1.Usuarioschema.findOne({ email: req.body.email, contraseña: req.body.contraseña })
+    usuario_schema_1.Usuarioschema.findOne({ email: req.query.email, contraseña: req.query.contrasenia })
         .then(resultado => {
+        console.log(resultado);
         res.send(resultado);
-        res.end();
     })
         .catch(resultado => {
         res.send(resultado);
@@ -37,6 +37,7 @@ const crearUsuario = (req, res) => {
     });
     nuevoUsuario.save()
         .then(resultado => {
+        console.log(resultado);
         res.send(resultado);
         res.end();
     })

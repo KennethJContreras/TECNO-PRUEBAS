@@ -2,6 +2,32 @@ var loginContainer = document.getElementById(`login-motorista-container`);
 var registroContainer = document.getElementById(`registro-motorista-container`);
 var anclaRegistro = document.getElementById(`ancla-registro`);
 
+const obtenerMotorista = () => {
+    const motorista = {
+        email: document.getElementById("user").value,
+        contraseña: document.getElementById("contra").value
+    };
+
+    fetch(`http://localhost:2000/motoristas/?email=${encodeURIComponent(motorista.email)}&contrasenia=${encodeURIComponent(motorista.contraseña)}`, {
+        method: 'GET',
+        headers: { 'Content-Type': 'application/json' },
+        redirect: 'follow'
+    })
+        .then(result => {
+            if (!result.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return result.json();
+        })
+        .then(usr => {
+            window.location.href = "pag-motorista.html";
+        })
+        .catch(error => {
+            document.getElementById("form-login").reset();
+            document.getElementById("msg-error").innerHTML = "&#9888; No pudimos encontrar tu cuenta de TecnoShop"
+        });
+}
+
 var motorista = 'keneth';
 var password = 1234;
 

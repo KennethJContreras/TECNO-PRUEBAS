@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 import { MotoristaSchema } from "../models/motorista.schema";
 
 export const obtenerMotorista = (req:Request, res:Response) => {
-    MotoristaSchema.findOne({email: req.params.email, contraseña: req.params.contraseña})
+    MotoristaSchema.findOne({email: req.query.email, contraseña: req.query.contraseña})
     .then(resultado => {
         res.send(resultado);
         res.end();

@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.crearMotorista = exports.obtenerMotoristas = exports.obtenerMotorista = void 0;
 const motorista_schema_1 = require("../models/motorista.schema");
 const obtenerMotorista = (req, res) => {
-    motorista_schema_1.MotoristaSchema.findOne({ email: req.params.email, contraseña: req.params.contraseña })
+    motorista_schema_1.MotoristaSchema.findOne({ email: req.query.email, contraseña: req.query.contraseña })
         .then(resultado => {
         res.send(resultado);
         res.end();

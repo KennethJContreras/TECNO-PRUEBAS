@@ -1,5 +1,6 @@
 import express, { Express, Request, Response } from 'express';
 import dotenv from 'dotenv';
+import cors from 'cors';
 import { Database } from './utils/database';
 import usuariosRouter from './routes/usuarios.router';
 import empresasRouter from './routes/empresas.router';
@@ -18,6 +19,7 @@ const database:Database = new Database();
 
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
+app.use(cors());
 
 app.get('/', (req: Request, res: Response) => {
   res.send('Express + TypeScript Server');

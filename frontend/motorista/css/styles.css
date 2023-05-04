@@ -54,6 +54,12 @@ img[alt="logo"] {
     align-items: center;
 }
 
+.msg-error {
+    font-size: .7rem;
+    text-align: center;
+    color: red;
+}
+
 img[alt="motociclista"] {
     width: 50%;
 }
